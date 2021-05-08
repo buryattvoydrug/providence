@@ -1,0 +1,58 @@
+*{
+	box-sizing:border-box;
+	margin: 0;
+}
+@mixin button($width,$height,$bg){
+	width: $width;
+	height: $height;
+	border-radius: 21px;
+	background-color: $bg;
+}
+.container{
+	max-width: 1170px;
+	margin: 0 auto;
+}
+.button{
+	display: flex;
+	align-items: center;
+}
+.black__button{
+	width: 210px;
+	height: 60px;
+	border-radius: 30px;
+	background-color: #131315;
+	img{
+		padding: 14px 18px 18px 27px;
+	}
+	.button__text{
+		@include regular(12px);
+		color:#fff;
+		span:nth-child(2){
+			@include regular(23px);
+			display: block;
+		}
+	}
+}
+.blue__button{
+	@include button(202px,42px,#267df4);
+	justify-content: space-between;
+	padding: 0 24px 0 2px;
+}
+.green__button{
+	@include button(164px,42px,#6fc754);
+	border:none;
+	border-radius: 21px;
+}
+@media (max-width:1199px){
+	.container{
+		padding: 0 30px;
+	}
+	img{
+		max-width:787px;
+	}
+}
+@media (max-width:767px){
+	form{
+		max-width: 100% !important;
+	}
+}
